@@ -1,3 +1,53 @@
+import he from 'he';
+
+export const DECIMAL_PLACES = 4;
+
+export const isInt = (n) => {
+  return Number(n) === n && n % 1 === 0;
+};
+
+export const isFloat = (n) => {
+  return Number(n) === n && n % 1 !== 0;
+};
+
+export const toFixed = (n, decimalPlaces) => {
+  if (n) return n.toFixed(decimalPlaces);
+  return 0;
+};
+
+export const undefToNull = (key, value) => (typeof value === 'undefined' ? null : value);
+
+export const isArrayMapEmpty = (arrayMap) => {
+  if (!Object.entries(arrayMap).length) return true;
+  for (const [key, list] of Object.entries(arrayMap)) {
+    if (Array.isArray(list) && list.length > 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+export const promptRequired = function (fieldName, objectName) {
+  return `Please provide a ${fieldName} for ${objectName}.`;
+};
+
+export const isJsonString = (str) => {
+  try {
+    JSON.parse(str);
+  } catch (e) {
+    return false;
+  }
+  return true;
+};
+
+export const encodeStr = (str) => {
+  return encodeURI(he.encode(str));
+};
+
+export const decodeStr = (str) => {
+  return he.decode(decodeURI(str));
+};
+
 /**
  * Simple dedupe.
  * @param {*} arr
@@ -48,10 +98,20 @@ export const toFolders = (str) => {
 };
 
 const utils = {
+  DECIMAL_PLACES,
+  isInt,
+  isFloat,
+  toFixed,
+  undefToNull,
+  isArrayMapEmpty,
+  promptRequired,
+  isJsonString,
+  encodeStr,
+  decodeStr,
   dedupe,
   toSlug,
   toTitle,
-  toFolders,
+  toFolders
 };
 
 export default utils;

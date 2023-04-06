@@ -3,7 +3,7 @@ import path from 'path';
 import musicmetadata from 'musicmetadata';
 import { toSlug, toFolders } from './utils.js';
 import { ASSET_TYPES } from './constants.js';
-import { scanDirectory, AUDIO_TYPE } from './scan-directory.js';
+import { scanDirectory, AUDIO_TYPE } from './scan.js';
 
 const getAudioMetadata = async (filepath) => {
   const metadata = await new Promise((resolve, reject) => {
