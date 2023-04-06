@@ -1,0 +1,25 @@
+{
+  "name": "@ksuayan/core",
+  "version": "0.1.0",
+  "description": "Core utilities for webdev.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksuayan/core.git"
+  },
+  "keywords": [
+    "core",
+    "webdev",
+    "utils"
+  ],
+  "author": "git@suayan.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksuayan/core/issues"
+  },
+  "homepage": "https://github.com/ksuayan/core#readme"
+}
