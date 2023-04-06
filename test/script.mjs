@@ -1,3 +1,6 @@
-import init from '@ksuayan/core';
+import core from '@ksuayan/core';
 
-console.log(init("yo!"));
+const list = ['a', 'aa', 'b', 'b', 'bb'];
+
+console.log(core.utils.dedupe(list));
+console.log(core.db.isValidObecjtId('123123123'));
