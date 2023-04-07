@@ -1,6 +1,6 @@
-import { connectToDatabase, oid, isValidObecjtId } from './db';
-import Config from './config';
-import { DB_NAME, DB_COLLECTION, SORT } from './constants';
+import { connectToDatabase, oid, isValidObecjtId } from './db.js';
+import Config from './config.js';
+import { DB_NAME, DB_COLLECTION, SORT } from './constants.js';
 
 const ALBUM_SUBDIR = 'subDir';
 
@@ -486,3 +486,31 @@ export const searchByTags = async (tags) => {
 
   return { articles, archive };
 };
+
+const assets = {
+  PUBLIC_NOTECARDS,
+  IMAGE_FACETS_AGGREGATION,
+  TAGS_FACET_AGGREGATION,
+  createPaginatedAggregation,
+  createAggregation,
+  queryDB,
+  aggregateDB,
+  getMarkdownDocs,
+  getMarkdownDocsByQuery,
+  getMarkdownDocsStaticPaths,
+  getImages,
+  getImageStaticProps,
+  getImageStaticPaths,
+  getImagesByQuery,
+  getAlbumStaticProps,
+  getAlbumIndex,
+  getAlbumStaticPaths,
+  getImageTagStaticPaths,
+  getTagsStaticProps,
+  getTagsStaticPaths,
+  getImageFacets,
+  searchText,
+  searchByTags
+};
+
+export default assets;

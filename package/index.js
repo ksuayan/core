@@ -1,5 +1,6 @@
 import audio from './audio.js';
 import axios from './axios.js';
+import assets from './assets.js';
 import dayjs from './dayjs.js';
 import db from './db.js';
 import fs from './fs.js';
@@ -20,6 +21,7 @@ const core = {
   axios,
   keywords,
   markdown,
+  assets
 };
 
 export default core;
