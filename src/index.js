@@ -10,7 +10,7 @@ import markdown from './markdown.js';
 import scan from './scan.js';
 import utils from './utils.js';
 
-const core = {
+export const core = {
   utils: utils,
   db: db,
   fs: fs,
@@ -23,5 +23,3 @@ const core = {
   markdown: markdown,
   assets: assets
 };
-
-export default core;

@@ -1,4 +1,4 @@
-import core from '@ksuayan/core';
+import { core } from '@ksuayan/core';
 
 const { image, assets, db, utils } = core;
 
