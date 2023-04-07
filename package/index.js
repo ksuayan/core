@@ -11,17 +11,17 @@ import scan from './scan.js';
 import utils from './utils.js';
 
 const core = {
-  utils,
-  db,
-  fs,
-  scan,
-  image,
-  audio,
-  dayjs,
-  axios,
-  keywords,
-  markdown,
-  assets
+  utils: utils,
+  db: db,
+  fs: fs,
+  scan: scan,
+  image: image,
+  audio: audio,
+  dayjs: dayjs,
+  axios: axios,
+  keywords: keywords,
+  markdown: markdown,
+  assets: assets
 };
 
 export default core;
