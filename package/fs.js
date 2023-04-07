@@ -95,6 +95,10 @@ export const createImageDir = (rendersDir, dateDir) => {
   }
 };
 
+export const readJson = async (filepath) => {
+  return await jetpack.readAsync(filepath, 'json');
+};
+
 const fs = {
   getSubDir,
   getCurrentDatePath,
@@ -102,6 +106,7 @@ const fs = {
   getFilename,
   parseExifDatePath,
   createImageDir,
+  readJson,
 };
 
 export default fs;

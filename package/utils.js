@@ -15,7 +15,8 @@ export const toFixed = (n, decimalPlaces) => {
   return 0;
 };
 
-export const undefToNull = (key, value) => (typeof value === 'undefined' ? null : value);
+export const undefToNull = (key, value) =>
+  typeof value === 'undefined' ? null : value;
 
 export const isArrayMapEmpty = (arrayMap) => {
   if (!Object.entries(arrayMap).length) return true;
@@ -97,6 +98,19 @@ export const toFolders = (str) => {
   return s.slice(0, s.length - 1).filter((item) => !!item);
 };
 
+export const mergeList = (a, b) => {
+  const aList = Array.isArray(a) ? a : [];
+  const bList = Array.isArray(b) ? b : [];
+  return Array.from(new Set([...aList, ...bList])).filter((item) => !!item);
+};
+
+export const lowercase = (list) => {
+  if (!list) return list;
+  return list.map((i) => {
+    return typeof i == 'string' ? i.toLowerCase() : '';
+  });
+};
+
 const utils = {
   DECIMAL_PLACES,
   isInt,
@@ -111,7 +125,9 @@ const utils = {
   dedupe,
   toSlug,
   toTitle,
-  toFolders
+  toFolders,
+  mergeList,
+  lowercase,
 };
 
 export default utils;
