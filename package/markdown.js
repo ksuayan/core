@@ -11,18 +11,14 @@ import remarkStringify from 'remark-stringify';
 import { Parser } from 'retext-english';
 import { unified } from 'unified';
 
-import { analyzeTopKeywords } from './keywords.js';
+import { topKeywords } from './keywords.js';
 import { MARKDOWN_TYPE, scanDirectory } from './scan.js';
 import { dedupe, toFolders, toSlug, toTitle } from './utils.js';
 
 export const markdownToText = async (doc) => {
   let text;
   try {
-    text = unified()
-      .use(remarkParse)
-      .use(remarkRetext, Parser)
-      .use(retextStringify)
-      .process(doc);
+    text = unified().use(remarkParse).use(remarkRetext, Parser).use(retextStringify).process(doc);
   } catch (error) {
     console.error(error);
   }
@@ -38,7 +34,7 @@ export const parseMarkdown = async (str) => {
     .use(remarkStringify, {
       bullet: '-',
       bulletOther: '*',
-      fence: '`',
+      fence: '`'
     })
     .process(str);
   return text;
@@ -51,7 +47,7 @@ export const htmlToMarkdown = async (htmlStr) => {
     .use(remarkStringify, {
       bullet: '-',
       bulletOther: '*',
-      fence: '`',
+      fence: '`'
     })
     .process(htmlStr);
 };
@@ -77,7 +73,7 @@ export const processMarkdown = async (sourceDir) => {
       let subpath = sourceFile.replace(sourceDir + '/', '');
 
       const plainText = await markdownToText(text);
-      const topKeywords = analyzeTopKeywords({ text: plainText.toString() });
+      const topKeywords = topKeywords({ text: plainText.toString() });
       // flatten the array of objects to an array of strings
       const tkList = topKeywords.map((tk) => tk.word);
       const title = toTitle(subpath, /\.md$/);
@@ -111,7 +107,7 @@ export const processMarkdown = async (sourceDir) => {
         dtCreated,
         dtUpdated,
         ...data,
-        content: text,
+        content: text
       };
       return markdownDoc;
     })

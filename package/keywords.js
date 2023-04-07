@@ -44,18 +44,16 @@ const toObjectList = (frequencyCounts) => {
  * @param {*} param0
  * @returns
  */
-export const analyzeTopKeywords = ({
+export const topKeywords = ({
   text,
   count = DEFAULT_COUNT,
   minCount = DEFAULT_MIN_COUNT,
-  minLength = DEFAULT_MIN_LENGTH,
+  minLength = DEFAULT_MIN_LENGTH
 }) => {
   const tokens = tokenizer.tokenize(text);
   const filteredTokens = removeStopwords(tokens, eng);
   const taggedWords = tagger.tag(filteredTokens).taggedWords;
-  const importantTokens = taggedWords
-    .filter((token) => importantTags.has(token.tag))
-    .map((token) => token.token);
+  const importantTokens = taggedWords.filter((token) => importantTags.has(token.tag)).map((token) => token.token);
   // Count the frequency of each remaining word and sort them by frequency
   const frequencyCounts = importantTokens.reduce((counts, token) => {
     const key = token.toLowerCase();
