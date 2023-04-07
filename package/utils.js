@@ -65,17 +65,14 @@ export const dedupe = (arr) => {
  */
 export const toSlug = (str) => {
   if (!str) return str;
-  return (
-    str &&
-    str
-      .trim()
-      .replace(/\?/g, '_')
-      .replace(/\'/g, '-')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/\//g, '-')
-      .toLowerCase()
-  );
+  return str
+    .trim()
+    .replace(/\?/g, '_')
+    .replace(/\'/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/\//g, '-')
+    .toLowerCase();
 };
 
 /**

@@ -34,7 +34,7 @@ export const readAudioMetadata = async (file, sourceDir) => {
   try {
     metadata = await getAudioMetadata(resolvedPath);
     metadata.type = ASSET_TYPES.AUDIO;
-    metadata.origFile = encodeURI(origFile);
+    metadata.origFile = origFile;
     metadata.folders = toFolders(origFile);
     metadata.slug = toSlug(metadata.title);
 
