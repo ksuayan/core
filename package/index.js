@@ -5,6 +5,7 @@ import db from './db.js';
 import fs from './fs.js';
 import image from './image.js';
 import keywords from './keywords.js';
+import markdown from './markdown.js';
 import scan from './scan.js';
 import utils from './utils.js';
 
@@ -18,6 +19,7 @@ const core = {
   dayjs,
   axios,
   keywords,
+  markdown,
 };
 
 export default core;
