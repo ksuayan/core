@@ -5,6 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "build": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -42,7 +43,11 @@
     "stopword": "^2.0.7",
     "unified": "^10.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4"
+  },
   "author": "git@suayan.com",
   "license": "ISC",
   "bugs": {
