@@ -1,6 +1,6 @@
 {
   "name": "@ksuayan/core",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Core utilities for webdev.",
   "type": "module",
   "main": "src/index.js",
