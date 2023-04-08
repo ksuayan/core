@@ -12,7 +12,7 @@ import { Parser } from 'retext-english';
 import retextStringify from 'retext-stringify';
 import { unified } from 'unified';
 
-import { topKeywords } from './keywords.js';
+import keywords from './keywords.js';
 import { MARKDOWN_TYPE, scanDirectory } from './scan.js';
 import { dedupe, toFolders, toSlug, toTitle } from './utils.js';
 
@@ -74,7 +74,7 @@ export const processMarkdown = async (sourceDir) => {
       let subpath = sourceFile.replace(sourceDir + '/', '');
 
       const plainText = await markdownToText(text);
-      const topKeywords = topKeywords({ text: plainText.toString() });
+      const topKeywords = keywords.topKeywords({ text: plainText.toString() });
       // flatten the array of objects to an array of strings
       const tkList = topKeywords.map((tk) => tk.word);
       const title = toTitle(subpath, /\.md$/);

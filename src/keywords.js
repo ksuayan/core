@@ -65,8 +65,7 @@ export const topKeywords = ({
     .sort((a, b) => b.count - a.count)
     .filter((item) => item.count >= minCount && item.word.length >= minLength);
 
-  const topKeywords = sortedKeywords.slice(0, count);
-  return topKeywords;
+  return sortedKeywords.slice(0, count);
 };
 
 const keywords = {
