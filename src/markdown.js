@@ -9,6 +9,7 @@ import remarkParseFrontmatter from 'remark-parse-frontmatter';
 import remarkRetext from 'remark-retext';
 import remarkStringify from 'remark-stringify';
 import { Parser } from 'retext-english';
+import retextStringify from 'retext-stringify';
 import { unified } from 'unified';
 
 import { topKeywords } from './keywords.js';
