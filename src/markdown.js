@@ -78,7 +78,7 @@ export const processMarkdown = async (sourceDir) => {
       // flatten the array of objects to an array of strings
       const tkList = topKeywords.map((tk) => tk.word);
       const title = toTitle(subpath, /\.md$/);
-      const slug = toSlug(title);
+      const slug = (data && data.slug) ? data.slug : toSlug(title);
       const folders = toFolders(subpath);
 
       // merge if there are tags
